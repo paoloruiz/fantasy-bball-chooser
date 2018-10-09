@@ -131,7 +131,9 @@ document.getElementById('draftButton').addEventListener('click', () => {
 	formattedPlayers = formattedPlayers.filter((player) => {
 		if (player.name === selectedPlayerName) {
 			teams.forEach((team) => {
-				team.team.push(player);
+        if (team.name === selectedTeamName) {
+				  team.team.push(player);
+        }
 			});
 			return false;
 		}
