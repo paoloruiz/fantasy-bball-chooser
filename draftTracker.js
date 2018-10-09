@@ -12,13 +12,13 @@ let formattedPlayers = inputPlayers.split('\n').map((row) => {
     fgma: cols[6].split(' ')[1],
     ftp: cols[7].split(' ')[0],
     ftma: cols[7].split(' ')[1],
-    tpm: parseDouble(cols[8]),
-    pts: parseDouble(cols[9]),
-    reb: parseDouble(cols[10]),
-    ast: parseDouble(cols[11]),
-    stl: parseDouble(cols[12]),
-    blk: parseDouble(cols[13]),
-    tos: parseDouble(cols[14])
+    tpm: parseFloat(cols[8]),
+    pts: parseFloat(cols[9]),
+    reb: parseFloat(cols[10]),
+    ast: parseFloat(cols[11]),
+    stl: parseFloat(cols[12]),
+    blk: parseFloat(cols[13]),
+    tos: parseFloat(cols[14])
   };
 });
 
@@ -79,12 +79,12 @@ const getTeamStats = () => {
     };
     team.team.forEach((player) => {
       const fgmaUnparsed = player.fgma.replace('(', '').replace(')', '').split('/');
-      const fgm = parseDouble(fgmaUnparsed[0]);
-      const fga = parseDouble(fgmaUnparsed[1]);
+      const fgm = parseFloat(fgmaUnparsed[0]);
+      const fga = parseFloat(fgmaUnparsed[1]);
       
       const ftmaUnparsed = player.ftma.replace('(', '').replace(')', '').split('/');
-      const ftm = parseDouble(ftmaUnparsed[0]);
-      const fta = parseDouble(ftmaUnparsed[1]);
+      const ftm = parseFloat(ftmaUnparsed[0]);
+      const fta = parseFloat(ftmaUnparsed[1]);
       
       consolidatedPlayer.fgm += fgm;
       consolidatedPlayer.fga += fga;
