@@ -31,6 +31,6 @@ const getPlayerSelector = (players) => {
   return output;
 };
 
-
+console.log(formattedPlayers);
 
 document.getElementById('player_selector').innerHTML = getPlayerSelector(formattedPlayers);
