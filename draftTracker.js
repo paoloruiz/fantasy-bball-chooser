@@ -12,13 +12,13 @@ let formattedPlayers = inputPlayers.split('\n').map((row) => {
     fgma: cols[6].split(' ')[1],
     ftp: cols[7].split(' ')[0],
     ftma: cols[7].split(' ')[1],
-    tpm: cols[8],
-    pts: cols[9],
-    reb: cols[10],
-    ast: cols[11],
-    stl: cols[12],
-    blk: cols[13],
-    tos: cols[14]
+    tpm: parseInt(cols[8]),
+    pts: parseInt(cols[9]),
+    reb: parseInt(cols[10]),
+    ast: parseInt(cols[11]),
+    stl: parseInt(cols[12]),
+    blk: parseInt(cols[13]),
+    tos: parseInt(cols[14])
   };
 });
 
@@ -59,6 +59,67 @@ const updateTeamSelector = () => {
 	document.getElementById('team_selector').innerHTML = getTeamSelector(teams);
 };
 
+const getTeamStats = () => {
+  let output = '<table>';
+  // fg ft 3p pt rb as st bl to
+  output += '<tr><th>Name</th><th># of Players</th><th>Field Goal %</th><th>Free Throw %</th><th>3 pointers</th><th>Points</th><th>Rebounds</th><th>Assists</th><th>Steals</th><th>Blocks</th><th>Turnovers</th></tr>';
+  teams.forEach((team) => {
+    const consolidatedPlayer = {
+      fgm: 0,
+      fga: 0,
+      ftm: 0,
+      fta: 0,
+      tpm: 0,
+      pts: 0,
+      reb: 0,
+      ast: 0,
+      stl: 0,
+      blk: 0,
+      tos: 0
+    };
+    team.team.forEach((player) => {
+      const fgmaUnparsed = player.fgma.replace('(', '').replace(')', '').split('/');
+      const fgm = parseInt(fgmaUnparsed[0]);
+      const fga = parseInt(fgmaUnparsed[1]);
+      
+      const ftmaUnparsed = player.ftma.replace('(', '').replace(')', '').split('/');
+      const ftm = parseInt(ftmaUnparsed[0]);
+      const fta = parseInt(ftmaUnparsed[1]);
+      
+      consolidatedPlayer.fgm += fgm;
+      consolidatedPlayer.fga += fga;
+      consolidatedPlayer.ftm += ftm;
+      consolidatedPlayer.fta += fta;
+      consolidatedPlayer.tpm += player.tpm;
+      consolidatedPlayer.pts += player.pts;
+      consolidatedPlayer.reb += player.reb;
+      consolidatedPlayer.ast += player.ast;
+      consolidatedPlayer.stl += player.stl;
+      consolidatedPlayer.blk += player.blk;
+      consolidatedPlayer.tos += player.tos;
+    });
+    output += `<tr>
+      <td>${team.name}</td>
+      <td>${team.team.length}</td>
+      <td>${consolidatedPlayer.fgm/consolidatedPlayer.fga}</td>
+      <td>${consolidatedPlayer.ftm/consolidatedPlayer.fta}</td>
+      <td>${consolidatedPlayer.tpm}</td>
+      <td>${consolidatedPlayer.pts}</td>
+      <td>${consolidatedPlayer.reb}</td>
+      <td>${consolidatedPlayer.ast}</td>
+      <td>${consolidatedPlayer.stl}</td>
+      <td>${consolidatedPlayer.blk}</td>
+      <td>${consolidatedPlayer.tos}</td>
+    </tr>`;
+  });
+  output += '</table>';
+  return output;
+};
+
+const updateTeamStats = () => {
+	document.getElementById('team_stats').innerHTML = getTeamStats();
+};
+
 updatePlayerSelector();
 updateTeamSelector();
 document.getElementById('draftButton').addEventListener('click', () => {
@@ -79,4 +140,5 @@ document.getElementById('draftButton').addEventListener('click', () => {
 	
 	updatePlayerSelector();
 	updateTeamSelector();
+  updateTeamStats();
 });
