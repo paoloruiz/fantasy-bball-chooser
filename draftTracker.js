@@ -12,13 +12,13 @@ let formattedPlayers = inputPlayers.split('\n').map((row) => {
     fgma: cols[6].split(' ')[1],
     ftp: cols[7].split(' ')[0],
     ftma: cols[7].split(' ')[1],
-    tpm: parseFloat(cols[8]),
-    pts: parseFloat(cols[9]),
-    reb: parseFloat(cols[10]),
-    ast: parseFloat(cols[11]),
-    stl: parseFloat(cols[12]),
-    blk: parseFloat(cols[13]),
-    tos: parseFloat(cols[14])
+    tpm: parseFloat(cols[8]).toFixed(3),
+    pts: parseFloat(cols[9]).toFixed(3),
+    reb: parseFloat(cols[10]).toFixed(3),
+    ast: parseFloat(cols[11]).toFixed(3),
+    stl: parseFloat(cols[12]).toFixed(3),
+    blk: parseFloat(cols[13]).toFixed(3),
+    tos: parseFloat(cols[14]).toFixed(3)
   };
 });
 
@@ -101,8 +101,8 @@ const getTeamStats = () => {
     output += `<tr>
       <td>${team.name}</td>
       <td>${team.team.length}</td>
-      <td>${consolidatedPlayer.fgm/consolidatedPlayer.fga}</td>
-      <td>${consolidatedPlayer.ftm/consolidatedPlayer.fta}</td>
+      <td>${(consolidatedPlayer.fgm/consolidatedPlayer.fga).toFixed(3)}</td>
+      <td>${(consolidatedPlayer.ftm/consolidatedPlayer.fta).toFixed(3)}</td>
       <td>${consolidatedPlayer.tpm}</td>
       <td>${consolidatedPlayer.pts}</td>
       <td>${consolidatedPlayer.reb}</td>
