@@ -31,6 +31,26 @@ const getPlayerSelector = (players) => {
   return output;
 };
 
-console.log(formattedPlayers);
-
 document.getElementById('player_selector').innerHTML = getPlayerSelector(formattedPlayers);
+
+const teams = [
+  { name: 'alex', team: [] },
+  { name: 'irvin', team: [] },
+  { name: 'josh', team: [] },
+  { name: 'jim', team: [] },
+  { name: 'tomas', team: [] },
+  { name: 'john', team: [] },
+  { name: 'michael', team: [] },
+  { name: 'me', team: [] }
+];
+
+const getTeamSelector = (teams) => {
+	let output = '<select>';
+	teams.forEach((team) => {
+		output += `<option value="${team.name}">${team.name}</option>`;
+	});
+	output += '</select>';
+	return output;
+}
+
+document.getElementById('team_selector').innerHTML = getTeamSelector(teams);
