@@ -1,3 +1,7 @@
 .data_all {
   display: flex;
 }
+
+.data_column {
+  padding: 0 1.5rem;
+}
