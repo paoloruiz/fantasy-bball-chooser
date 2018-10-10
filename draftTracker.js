@@ -312,6 +312,8 @@ const inputPlayers = '1	Anthony Davis	PF/C	NOR	72	36.0	0.52 (10.5/20.3)	0.83 (6.
   '309	Bismack Biyombo	PF/C	CHA	78	15.0	0.52 (1.7/3.2)	0.59 (1.1/1.8)	0.0	4.4	4.7	0.6	0.2	0.8	0.8	-5.52	 \n' +
   '310	Henry Ellenson	PF	DET	70	15.0	0.37 (2.5/6.8)	0.85 (1.2/1.5)	1.0	7.3	3.8	1.0	0.3	0.1	0.8	-5.52	 \n';
 
+console.log(inputPlayers);
+
 let formattedPlayers = inputPlayers.split('\n').map((row) => {
 	const cols = row.split('\t');
   return {
