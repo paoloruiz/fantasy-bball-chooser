@@ -495,19 +495,22 @@ document.getElementById('draftButton').addEventListener('click', () => {
 });
 
 draft('me', 'Chris Paul');
-draft('me', 'Josh Richardson');
+//draft('me', 'Josh Richardson');
 draft('me', 'Ben Simmons');
 draft('me', 'LeBron James');
 draft('me', 'Dwight Howard');
 draft('me', 'Joe Ingles');
 draft('me', 'Marc Gasol');
-draft('me', 'Lonzo Ball');
+//draft('me', 'Lonzo Ball');
 draft('me', 'Luka Doncic');
+draft('me', 'Gary Harris');
+draft('me', 'Jrue Holiday');
+draft('me', 'Larry Nance Jr');
 draft('me', 'Kyle Anderson');
 draft('me', 'Jusuf Nurkic');
 draft('me', 'John Collins');
 draft('me', 'Nikola Mirotic');
-draft('me', 'Allen Crabbe');
+//draft('me', 'Allen Crabbe');
 draft('me', 'Steven Adams');
 
 
