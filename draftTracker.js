@@ -453,7 +453,7 @@ const getWins = (player1, player2) => {
 
 const updateMyScores = () => {
   let output = '';
-  const myTeamScores = getConsolidatedPlayerFromTeam(teams['me']);
+  const myTeamScores = getConsolidatedPlayerFromTeam(teams[7]);
   teams.forEach((team) => {
     if (team.name === 'me') {
       return;
