@@ -570,7 +570,7 @@ draft('irvin', 'Giannis Antetokounmpo');
 draft('irvin', 'Andre Drummond');
 draft('irvin', 'Harrison Barnes');
 draft('irvin', 'Enes Kanter');
-draft('irvin', 'Wendell Carter Jr');
+draft('irvin', 'Wendell Carter Jr.');
 draft('irvin', 'Eric Bledsoe');
 draft('irvin', 'Darren Collison');
 draft('irvin', 'Andrew Wiggins');
