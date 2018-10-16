@@ -432,15 +432,8 @@ const updateTeamStats = () => {
 	document.getElementById('team_stats').innerHTML = getTeamStats();
 };
 
-updatePlayerSelector();
-updateTeamSelector();
-document.getElementById('draftButton').addEventListener('click', () => {
-	const selectPlayerElem = document.getElementById('player_slct');
-	const selectedPlayerName = selectPlayerElem.options[selectPlayerElem.selectedIndex].value;
-	
-	const selectTeamElem = document.getElementById('team_slct');
-	const selectedTeamName = selectTeamElem.options[selectTeamElem.selectedIndex].value;
-	formattedPlayers = formattedPlayers.filter((player) => {
+const draft = (selectedTeamName, selectedPlayerName) => {
+  formattedPlayers = formattedPlayers.filter((player) => {
 		if (player.name === selectedPlayerName) {
 			teams.forEach((team) => {
         if (team.name === selectedTeamName) {
@@ -451,6 +444,17 @@ document.getElementById('draftButton').addEventListener('click', () => {
 		}
 		return true;
 	});
+};
+
+updatePlayerSelector();
+updateTeamSelector();
+document.getElementById('draftButton').addEventListener('click', () => {
+	const selectPlayerElem = document.getElementById('player_slct');
+	const selectedPlayerName = selectPlayerElem.options[selectPlayerElem.selectedIndex].value;
+	
+	const selectTeamElem = document.getElementById('team_slct');
+	const selectedTeamName = selectTeamElem.options[selectTeamElem.selectedIndex].value;
+	draft(selectedTeamName, selectedPlayerName);
 	
 	updatePlayerSelector();
 	updateTeamSelector();
