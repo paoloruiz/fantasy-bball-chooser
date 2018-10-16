@@ -476,6 +476,125 @@ draft('me', 'John Collins');
 draft('me', 'Nikola Mirotic');
 draft('me', 'Allen Crabbe');
 draft('me', 'Steven Adams');
+
+
+draft('michael', 'C.J. McCollum');
+draft('michael', 'Kawhi Leonard');
+draft('michael', 'Bradley Beal');
+draft('michael', 'Paul George');
+draft('michael', 'Al Horford');
+draft('michael', 'Evan Fournier');
+draft('michael', 'Karl-Anthony Towns');
+draft('michael', 'DeAndre Jordan');
+draft('michael', 'Buddy Hield');
+draft('michael', 'Bogdan Bogdanovic');
+draft('michael', 'Alex Len');
+draft('michael', 'Mohamed Bamba');
+draft('michael', 'Trevor Ariza');
+draft('michael', 'Bojan Bogdanovic');
+draft('michael', 'Spencer Dinwiddie');
+
+
+draft('john', 'Russell Westbrook');
+draft('john', 'Devin Booker');
+draft('john', 'Donovan Mitchell');
+draft('john', 'Jayson Tatum');
+draft('john', 'Tobias Harris');
+draft('john', 'Robert Covington');
+draft('john', 'Hassan Whiteside');
+draft('john', 'Jusuf Nurkic');
+draft('john', 'Jamal Murray');
+draft('john', 'Kemba Walker');
+draft('john', 'DeMar DeRozan');
+draft('john', 'Kelly Olynyk');
+draft('john', 'DeMarcus Cousins');
+draft('john', 'Carmelo Anthony');
+draft('john', 'Reggie Jackson');
+
+
+draft('tomas', 'Victor Oladipo');
+draft('tomas', 'Kris Dunn');
+draft('tomas', 'Zach LaVine');
+draft('tomas', 'Brandon Ingram');
+draft('tomas', 'Anthony Davis');
+draft('tomas', 'Danilo Gallinari');
+draft('tomas', 'Clint Capela');
+draft('tomas', 'Rudy Gobert');
+draft('tomas', 'Jonathan Isaac');
+draft('tomas', 'Thaddeus Young');
+draft('tomas', 'Jabari Parker');
+draft('tomas', 'Nikola Jokic');
+draft('tomas', 'T.J. Warren');
+draft('tomas', 'Malcolm Brogdon');
+draft('tomas', 'Jaylen Brown');
+
+
+draft('jim', 'Kyle Lowry');
+draft('jim', 'Jimmy Butler');
+draft('jim', 'Jrue Holiday');
+draft('jim', 'Kevin Durant');
+draft('jim', 'Dirk Nowitzki');
+draft('jim', 'Jarrett Allen');
+draft('jim', 'Nikola Vucevic');
+draft('jim', 'Julius Randle');
+draft('jim', 'Lauri Markkanen');
+draft('jim', 'Will Barton');
+draft('jim', 'Kyle Kuzma');
+draft('jim', 'Goran Dragic');
+draft('jim', 'Ricky Rubio');
+draft('jim', 'Tim Hardaway Jr.');
+draft('jim', 'Taj Gibson');
+
+
+draft('josh', 'Damian Lillard');
+draft('josh', 'Stephen Curry');
+draft('josh', 'J.J. Redick');
+draft('josh', 'Otto Porter Jr.');
+draft('josh', 'Joel Embiid');
+draft('josh', 'LaMarcus Aldridge');
+draft('josh', 'Paul Millsap');
+draft('josh', 'Dario Saric');
+draft('josh', 'Taurean Prince');
+draft('josh', 'Brook Lopez');
+draft('josh', 'Eric Gordon');
+draft('josh', 'Dennis Smith Jr.');
+draft('josh', 'Rudy Gay');
+draft('josh', 'Trae Young');
+draft('josh', 'Jaren Jackson Jr.');
+
+
+draft('irvin', 'Kyrie Irving');
+draft('irvin', 'James Harden');
+draft('irvin', 'Nicolas Batum');
+draft('irvin', 'Giannis Antetokounmpo');
+draft('irvin', 'Andre Drummond');
+draft('irvin', 'Harrison Barnes');
+draft('irvin', 'Enes Kanter');
+draft('irvin', 'Wendell Carter Jr.');
+draft('irvin', 'Eric Bledsoe');
+draft('irvin', 'Darren Collison');
+draft('irvin', 'Andrew Wiggins');
+draft('irvin', 'Serge Ibaka');
+draft('irvin', 'D\'Angelo Russell');
+draft('irvin', 'Tyreke Evans');
+draft('irvin', 'Kentavious Caldwell-Pope');
+
+
+draft('alex', 'John Wall');
+draft('alex', 'Klay Thompson');
+draft('alex', 'Khris Middleton');
+draft('alex', 'Aaron Gordon');
+draft('alex', 'Myles Turner');
+draft('alex', 'Blake Griffin');
+draft('alex', 'Kevin Love');
+draft('alex', 'Draymond Green');
+draft('alex', 'Gary Harris');
+draft('alex', 'Gordon Hayward');
+draft('alex', 'Lou Williams');
+draft('alex', 'Jeff Teague');
+draft('alex', 'Mike Conley');
+draft('alex', 'Jonas Valanciunas');
+draft('alex', 'Larry Nance Jr.');
 updatePlayerSelector();
 updateTeamSelector();
 updateTeamStats();
