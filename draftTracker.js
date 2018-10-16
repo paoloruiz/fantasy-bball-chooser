@@ -371,45 +371,50 @@ const updateTeamSelector = () => {
 	document.getElementById('team_selector').innerHTML = getTeamSelector(teams);
 };
 
+const getConsolidatedPlayerFromTeam = (team) => {
+  const consolidatedPlayer = {
+    fgm: 0,
+    fga: 0,
+    ftm: 0,
+    fta: 0,
+    tpm: 0,
+    pts: 0,
+    reb: 0,
+    ast: 0,
+    stl: 0,
+    blk: 0,
+    tos: 0
+  };
+  team.team.forEach((player) => {
+    const fgmaUnparsed = player.fgma.replace('(', '').replace(')', '').split('/');
+    const fgm = parseFloat(fgmaUnparsed[0]);
+    const fga = parseFloat(fgmaUnparsed[1]);
+
+    const ftmaUnparsed = player.ftma.replace('(', '').replace(')', '').split('/');
+    const ftm = parseFloat(ftmaUnparsed[0]);
+    const fta = parseFloat(ftmaUnparsed[1]);
+
+    consolidatedPlayer.fgm += fgm;
+    consolidatedPlayer.fga += fga;
+    consolidatedPlayer.ftm += ftm;
+    consolidatedPlayer.fta += fta;
+    consolidatedPlayer.tpm += player.tpm;
+    consolidatedPlayer.pts += player.pts;
+    consolidatedPlayer.reb += player.reb;
+    consolidatedPlayer.ast += player.ast;
+    consolidatedPlayer.stl += player.stl;
+    consolidatedPlayer.blk += player.blk;
+    consolidatedPlayer.tos += player.tos;
+  });
+  return consolidatedPlayer;
+};
+
 const getTeamStats = () => {
   let output = '<table>';
   // fg ft 3p pt rb as st bl to
   output += '<tr><th>Name</th><th># of Players</th><th>Field Goal %</th><th>Free Throw %</th><th>3 pointers</th><th>Points</th><th>Rebounds</th><th>Assists</th><th>Steals</th><th>Blocks</th><th>Turnovers</th></tr>';
   teams.forEach((team) => {
-    const consolidatedPlayer = {
-      fgm: 0,
-      fga: 0,
-      ftm: 0,
-      fta: 0,
-      tpm: 0,
-      pts: 0,
-      reb: 0,
-      ast: 0,
-      stl: 0,
-      blk: 0,
-      tos: 0
-    };
-    team.team.forEach((player) => {
-      const fgmaUnparsed = player.fgma.replace('(', '').replace(')', '').split('/');
-      const fgm = parseFloat(fgmaUnparsed[0]);
-      const fga = parseFloat(fgmaUnparsed[1]);
-      
-      const ftmaUnparsed = player.ftma.replace('(', '').replace(')', '').split('/');
-      const ftm = parseFloat(ftmaUnparsed[0]);
-      const fta = parseFloat(ftmaUnparsed[1]);
-      
-      consolidatedPlayer.fgm += fgm;
-      consolidatedPlayer.fga += fga;
-      consolidatedPlayer.ftm += ftm;
-      consolidatedPlayer.fta += fta;
-      consolidatedPlayer.tpm += player.tpm;
-      consolidatedPlayer.pts += player.pts;
-      consolidatedPlayer.reb += player.reb;
-      consolidatedPlayer.ast += player.ast;
-      consolidatedPlayer.stl += player.stl;
-      consolidatedPlayer.blk += player.blk;
-      consolidatedPlayer.tos += player.tos;
-    });
+    const consolidatedPlayer = getConsolidatedPlayerFromTeam(team);
     output += `<tr>
       <td>${team.name}</td>
       <td>${team.team.length}</td>
@@ -430,6 +435,33 @@ const getTeamStats = () => {
 
 const updateTeamStats = () => {
 	document.getElementById('team_stats').innerHTML = getTeamStats();
+};
+
+const getWins = (player1, player2) => {
+  let wins = 0;
+  if ((player1.fgm/player1.fga) > (player2.fgm/player2.fga)) wins++;
+  if ((player1.ftm/player1.fta) > (player2.ftm/player2.fta)) wins++;
+  if (player1.tpm > player2.tpm) wins++;
+  if (player1.pts > player2.pts) wins++;
+  if (player1.reb > player2.reb) wins++;
+  if (player1.ast > player2.ast) wins++;
+  if (player1.stl > player2.stl) wins++;
+  if (player1.blk > player2.blk) wins++;
+  if (player1.tos < player2.tos) wins++;
+  return wins;
+};
+
+const updateMyScores = () => {
+  let output = '';
+  const myTeamScores = getConsolidatedPlayerFromTeam(teams['me']);
+  teams.forEach((team) => {
+    if (team.name === 'me') {
+      return;
+    }
+    const wins = getWins(myTeamScores, getConsolidatedPlayerFromTeam(team));
+    output += `<span>vs. ${team.name}: ${wins}-${9 - wins}</span>`;
+  });
+  document.getElementById('my_scores').innerHTML = output;
 };
 
 const draft = (selectedTeamName, selectedPlayerName) => {
@@ -459,6 +491,7 @@ document.getElementById('draftButton').addEventListener('click', () => {
 	updatePlayerSelector();
 	updateTeamSelector();
   updateTeamStats();
+  updateMyScores();
 });
 
 draft('me', 'Chris Paul');
@@ -598,3 +631,4 @@ draft('alex', 'Larry Nance Jr');
 updatePlayerSelector();
 updateTeamSelector();
 updateTeamStats();
+updateMyScores();
