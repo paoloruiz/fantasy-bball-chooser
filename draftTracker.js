@@ -542,14 +542,14 @@ draft('jim', 'Will Barton');
 draft('jim', 'Kyle Kuzma');
 draft('jim', 'Goran Dragic');
 draft('jim', 'Ricky Rubio');
-draft('jim', 'Tim Hardaway Jr.');
+draft('jim', 'Tim Hardaway Jr');
 draft('jim', 'Taj Gibson');
 
 
 draft('josh', 'Damian Lillard');
 draft('josh', 'Stephen Curry');
 draft('josh', 'J.J. Redick');
-draft('josh', 'Otto Porter Jr.');
+draft('josh', 'Otto Porter Jr');
 draft('josh', 'Joel Embiid');
 draft('josh', 'LaMarcus Aldridge');
 draft('josh', 'Paul Millsap');
@@ -557,10 +557,10 @@ draft('josh', 'Dario Saric');
 draft('josh', 'Taurean Prince');
 draft('josh', 'Brook Lopez');
 draft('josh', 'Eric Gordon');
-draft('josh', 'Dennis Smith Jr.');
+draft('josh', 'Dennis Smith Jr');
 draft('josh', 'Rudy Gay');
 draft('josh', 'Trae Young');
-draft('josh', 'Jaren Jackson Jr.');
+draft('josh', 'Jaren Jackson Jr');
 
 
 draft('irvin', 'Kyrie Irving');
@@ -570,7 +570,7 @@ draft('irvin', 'Giannis Antetokounmpo');
 draft('irvin', 'Andre Drummond');
 draft('irvin', 'Harrison Barnes');
 draft('irvin', 'Enes Kanter');
-draft('irvin', 'Wendell Carter Jr.');
+draft('irvin', 'Wendell Carter Jr');
 draft('irvin', 'Eric Bledsoe');
 draft('irvin', 'Darren Collison');
 draft('irvin', 'Andrew Wiggins');
@@ -594,7 +594,7 @@ draft('alex', 'Lou Williams');
 draft('alex', 'Jeff Teague');
 draft('alex', 'Mike Conley');
 draft('alex', 'Jonas Valanciunas');
-draft('alex', 'Larry Nance Jr.');
+draft('alex', 'Larry Nance Jr');
 updatePlayerSelector();
 updateTeamSelector();
 updateTeamStats();
